@@ -27,7 +27,8 @@ export default function Page() {
     async function loadItems() {
         if (user) {
             const items = await getItems(user.uid);
-            setItems(items);
+            console.log(items);
+            setItems([...items]);
         }
     }
 

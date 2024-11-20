@@ -6,7 +6,7 @@ export async function getItems(userId) {
     const docRef = collection(db, "users", userId, "items");
     const docSnap = await  getDocs(docRef);
         docSnap.forEach(doc => 
-            items.push(doc)
+            items.push(doc.data())
         )
     return items;
 }
